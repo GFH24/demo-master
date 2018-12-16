@@ -1,0 +1,212 @@
+<%inherit file="/base.html"/>
+<%block name='head'>
+${parent.head()}
+</%block>
+<%block name="content">
+<div class="page-content">
+    <div class="king-panel8 mb20">
+        <div class="king-panel8-header p20" role="tab">
+                <div class="king-panel8-title king-info ">创建漏洞扫描任务</div>
+        </div>
+        <div class="king-panel8-content p25">
+            <div class="bk-flows mb20">
+                    <div class="bk-flow done">
+                        <span class="bk-flow-number">1</span>
+                        <span class="bk-flow-title">填写任务名称</span>
+                    </div>
+                    <div class="bk-flow done">
+                        <span class="bk-flow-number">2</span>
+                        <span class="bk-flow-title">选择漏扫工具</span>
+                    </div>
+                    <div class="bk-flow current">
+                        <span class="bk-flow-number">3</span>
+                        <span class="bk-flow-title">导入/填写漏扫IP</span>
+                    </div>
+                    <div class="bk-flow ">
+                            <span class="bk-flow-number">4</span>
+                            <span class="bk-flow-title">创建完成</span>
+                        </div>
+            </div>
+            <div class="ui-ui" style="position: relative; z-index: 0;">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">任务名称：</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="vulnscan_taskname">
+                            </div>
+                            <span class="text-danger mt5 fl">*</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">漏扫工具：</label>
+                            <div class="col-sm-7"  style="display:inline-block;">
+                                <input type="hidden" id="supplier"  class="select2_box" style="width:100%;">
+                            </div>
+                            <span class="text-danger mt5 fl">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">漏扫目标：</label>
+                            <div class="col-sm-8">
+                                <div style="width:100%;height: 40px;padding-top: 5px;">
+                                    <div class="col-sm-2 control-label">
+                                    <input onchange="change_value('01')" style="float:left;"  type="radio" checked name="ip_list"
+                                            value="IP"/>
+                                    <label>导入IP列表</label>
+                                    </div>
+                                    <form id="uploadtxt" method="post" enctype="multipart/form-data">
+                                    <div class="col-sm-4" style="margin-left: 15px;height: 10px;padding:2.5px;float:left;">
+                                    <!--<input name="files" id="fileupload"  type="file" />-->
+                                        <input type="file" name="uploadfile" />
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="button" class="king-btn king-primary mr10 navbar-blue" value="上传" style="width:100%;" onclick="uploadtxt();"/>
+                                    </div>
+                                    </form><span class="text-danger mt5 fl">*</span>                  
+                                </div>
+                                
+                                <div style="width:100%;height: 130px;">
+                                    <div class="col-sm-2 control-label" style="float:left;height: 40px;padding-top: 5px;">
+                                        <input onchange="change_value('02')" style="float:left;" type="radio" name="ip_list" value="IP_LIST"/>
+                                        <label>输入IP列表:</label>
+                                    </div>
+                                    
+                                    <div class="col-sm-6 control-label" style="margin-left: 15px;height: 35px;padding:2.5px;float:left;"> 
+                                        <textarea class="form-control" rows="6" style="width:100%;" id="iplist" placeholder="格式:&#13;&#10;172.0.0.11&#13;&#10;172.0.0.12&#13;&#10;172.0.0.13"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">执行时间：</label>
+                            <div class="col-sm-8">
+                                <div style="width:100%;height: 30px;padding-top: 5px;">
+                                    <input onchange="change_time('01')" type="radio" checked name="time_select"
+                                            value="NOW"/>
+                                            <label>立即</label>
+                                    </div>
+                                <div style="width:100%;height: 40px;">
+                                    <div style="float:left;height: 40px;padding-top: 5px;">
+                                        <input onchange="change_time('02')" type="radio" name="time_select" value="TIMER"/>
+                                        <label>定时 ———</label>
+                                    </div>
+                                    <div style="margin-left: 15px;height: 35px;padding:2.5px;float:left;">
+                                        <label>开始时间：</label>
+                                        <input type="text" style="width: 300px;" class="" id="date_start" placeholder="选择日期时间..." />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                        <div class="ui-ui" style="position: relative; z-index: 0;">
+                            <div class="form-group clearfix p30">
+                                <div class="col-sm-7 col-sm-offset-3">
+                                    <button  onclick="submitdata()" type="button" class="king-btn king-primary mr10 navbar-blue">确定</button>
+                                    <button onclick="cancel()" class="king-btn king-default">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</%block>
+<link href="https://magicbox.bk.tencent.com/static_api/v3/assets/artDialog-6.0.4/css/ui-dialog.css" rel="stylesheet">
+<link href="https://magicbox.bk.tencent.com/static_api/v3/assets/select2-3.5.2/select2.css" rel="stylesheet">
+<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/select2-3.5.2/select2.js"></script>
+<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/artDialog-6.0.4/dist/dialog-min.js"></script>
+<script type="text/javascript">
+
+// 扫描工具select2 通过数组数据生成
+var supplier = [{ id: 1, text: '启明天镜' }, { id: 2, text: '绿盟AAS' }] ;
+$("#supplier").select2({ data: supplier });
+
+
+//时间控件，定时执行
+//$("#date_start").kendoDateTimePicker({
+//    value:new Date(),
+//    format: "yyyy-MM-dd HH:mm:ss"
+//});
+
+//上传IP列表
+function uploadtxt(){
+        var form = document.getElementById('uploadtxt');
+        var formData = new FormData(form); 
+        $.ajax({ 
+            url:"${SITE_URL}uploadtxt/",
+            type:"post", 
+            data:formData, 
+            processData:false, 
+            contentType:false, 
+            success:function(obj){
+                alert(obj["result"]); 
+                $("#iplist").val(obj["iplist"]);
+            },
+            error:function(){ 
+                alert("连接失败!"); 
+            } 
+        });   
+    }
+
+//提交创建任务
+function submitdata(){
+    var vulnscan_taskname = $("#vulnscan_taskname").val();
+    var supplier = $("#supplier").val();
+    var iplist = $("#iplist").val();
+
+    //if ($("input[name='time_select']:checked").val() == "TIMER") {
+    //    excute_time = $("#date_start").val();
+    //}
+    var success = dialog({
+    				width: 260,
+    				title: "提示",
+    				content:'<div class="king-notice-box king-notice-success"><p class="king-notice-text">创建任务成功！</p></div>',
+                    ok: function() {
+                        window.location.href = "${SITE_URL}all_vulnscan/";
+                        },
+                    okValue: '跳转到任务管理',
+                    cancelValue: '继续创建',
+                    cancel: function() {
+                    window.location.reload();
+                    }
+    			});
+
+    if (!validate()) {
+        alert('请检查是否全部正确填写！');
+        return;
+    }
+
+    $.get("${SITE_URL}create_vulnscan_task/",{
+        "iplist":iplist,
+        "supplier":supplier,
+        "vulnscan_taskname":vulnscan_taskname,
+        },
+        function(res){
+            //alert(res.result);
+            success.show();
+            //window.location.href = "${SITE_URL}all_vulnscan/"
+            //window.location.reload();
+        },'json');	
+}
+
+function cancel() {
+    window.location.reload()
+}
+
+var validate = function () {
+    if ($("#vulnscan_taskname").val() == null || $("#vulnscan_taskname").val() == "")
+        return false;
+    if ($("#supplier").val() == null || $("#supplier").val() == "")
+        return false;
+    if ($("#iplist").val() == null || $("#iplist").val() == "")
+        return false;
+    //if ($("input[name='time_select']:checked").val() == "TIMER" && (!$("#date_start").val()))
+    //    return false;
+    return true;
+};
+
+</script>
+

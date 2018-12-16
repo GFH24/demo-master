@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%block name='head'>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>开发框架|蓝鲸智云社区版</title>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <link rel="shortcut icon" href="${STATIC_URL}favicon.ico" type="image/x-icon">
+        <!-- bootstrap css -->
+        <link href="${STATIC_URL}assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+        <!-- kendo ui css -->
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+        <!-- font-awesome -->
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+        <!--蓝鲸提供的公用样式库 -->
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk.css" rel="stylesheet">
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+		    <!-- 禁止bootstrap 响应式 （app根据自身需求启用或禁止bootstrap响应式） -->
+        <link href="${STATIC_URL}assets/bootstrap-3.3.4/css/bootstrap_noresponsive.css" rel="stylesheet">
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css-pro/bk.css" rel="stylesheet">
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/bk-icon-2.0/iconfont.css" rel="stylesheet">
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css-pro/layout/sidebar.css" rel="stylesheet>
+        <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css-pro/layout/nav.css" rel="stylesheet">
+        
+            <!--自定义css-->
+        <link href="${STATIC_URL}css/common.css" rel="stylesheet">
+        <link href="${STATIC_URL}css/index.css" rel="stylesheet">
+        <link href="${STATIC_URL}css/tab.css" rel="stylesheet">
+		<link href="${STATIC_URL}css/bk.css" rel="stylesheet">
+        
+        <!-- 这个是全局配置，如果需要在js中使用app_id和site_url,则这个javascript片段一定要保留 -->
+        <script type="text/javascript">
+	    	  var app_id = "${APP_ID}";
+			    var site_url = "${SITE_URL}";	  // app的url前缀,在ajax调用的时候，应该加上该前缀
+			    var static_url = "${STATIC_URL}"; // 静态资源前缀
+	      </script>
+    </%block>
+  </head>
+
+  <body class="bg-bright3" data-bg-color="bg-bright3">
+            <!-- header start -->
+            <nav class="bk-horz-nav11 bk-horz-nav-min">
+              <div class="bk-nav-logo">
+                  
+                  <img src="https://magicbox.bk.tencent.com/static_api/v3/bk/images/logo1.png">云安全自动化应用系统
+                
+              </div>
+              <div class="bk-nav-user">
+                    <a href="###" class="avatar">
+                        <img src="${STATIC_URL}img/getheadimg.jpg" width="40" alt="Avatar" class="avatar-img">
+                        % if request.user.is_superuser:
+                            <i class="crown"></i>
+                        % endif
+                        <span >${request.user.username}</span>
+                    </a>
+                        <!--退出登录-->
+                    <a id="logout" href="${LOGOUT_URL}">注销</a>
+                </div>
+              <ul class="bk-nav-links">
+                  <li >
+                      <a href="javascript:;">帮助文档</a>
+                  </li>
+              </ul>
+              
+            </nav>
+            <!-- header start -->
+            
+          
+          <div class="bk-layout bk-layout-has-sidebar " style="height:calc(100% - 60px)">
+            <!-- sidebar start -->
+            <div class="bk-sidebar slide-open">
+              <div class="slide-switch">
+                  <i class="icon bk-icon icon-dedent f14"></i>
+              </div>
+              <div class="nav-list">
+                  <ul>
+                      <li class="pureLink">
+                          <a href="${SITE_URL}">
+                          <span class="icon-box">
+                              <i class="bk-icon icon-home"></i>
+                          </span>
+                          <span class="nav-name">首页</span>
+                      </a>
+                      </li>
+                      <li>
+                          <a href="javascript:void(0);">
+                          <span class="icon-box">
+                              <i class="bk-icon icon-eye"></i>
+                          </span>
+                          <span class="nav-name">漏洞扫描</span>
+                      </a>
+                      <div class="flex-subnavs">
+                            <a href="${SITE_URL}all_vulnscan/"><i></i>漏洞扫描任务</a>
+                            <a href="${SITE_URL}create_vulnscan/"><i></i>创建扫描任务</a>
+                            <a href="${SITE_URL}all_vulnscan/"><i></i>漏洞结果分析</a>
+                        </div>
+                      </li>
+                      <li>
+                            <a href="javascript:void(0);">
+                            <span class="icon-box">
+                                <i class="bk-icon icon-pc"></i>
+                            </span>
+                            <span class="nav-name">基线扫描</span>
+                        </a>
+                        <div class="flex-subnavs">
+                              <a href="${SITE_URL}all_check/"><i></i>基线扫描任务</a>
+                              <a href="${SITE_URL}base_check/"><i></i>创建基线扫描任务</a>
+                              <a href="${SITE_URL}all_check/"><i></i>基线结果分析</a>
+                          </div>
+                        </li>
+                        <li>
+                                <a href="javascript:void(0);">
+                                <span class="icon-box">
+                                    <i class="bk-icon icon-lock"></i>
+                                </span>
+                                <span class="nav-name">安全加固</span>
+                            </a>
+                            <div class="flex-subnavs">
+                                  <a href="javascript:;"><i></i>流量清洗</a>
+                                  <a href="javascript:;"><i></i>黑名单</a>
+                                  <a href="javascript:;"><i></i>基线结果分析</a>
+                              </div>
+                            </li>
+                      <li>
+                          <a href="javascript:;">
+                          <span class="icon-box">
+                              <i class="bk-icon icon-bar-chart"></i>
+                          </span>
+                          <span class="nav-name">统计报表</span>
+                      </a>
+                          <div class="flex-subnavs ">
+                              <a href="javascript:;"><i></i>漏洞扫描报表</a>
+                              <a href="javascript:;"><i></i>基线扫描报表</a>
+                          </div>
+                      </li>
+                      <li>
+                            <a href="javascript:void(0);">
+                            <span class="icon-box">
+                                <i class="bk-icon icon-order"></i>
+                            </span>
+                            <span class="nav-name">日志管理</span>
+                        </a>
+                        <div class="flex-subnavs">
+                              <a href="javascript:;"><i></i>日志检索</a>
+                          </div>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                            <span class="icon-box">
+                                <i class="bk-icon icon-cog"></i>
+                            </span>
+                            <span class="nav-name">系统管理</span>
+                            </a>
+                            <div class="flex-subnavs">
+                                  <a href="javascript:;"><i></i>用户信息</a>
+                                  <a href="javascript:;"><i></i>权限管理</a>
+                              </div>
+                        </li>
+                  </ul>
+              </div>
+              <div class="copyright" >
+                  <p>Copyright &copy; 2018-2020 广东电信.</p>
+                  <span>All Rights Reserved.</span>
+              </div>
+            </div>
+            <!-- sidebar end -->
+            <!-- content start -->
+            <%block name='content'></%block>
+            <!-- content end -->
+          </div> 
+        
+    <!-- jquery js  -->
+    <script src="${STATIC_URL}js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="${STATIC_URL}js/jquery.json-2.3.min.js" type="text/javascript"></script>
+    
+    <!-- bootstrap js  -->
+    <script src="${STATIC_URL}assets/bootstrap-3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!--配置js  勿删-->
+    <script src="${STATIC_URL}js/settings.js?v=${STATIC_VERSION}" type="text/javascript"></script>
+    ${self.body()}
+    <!-- 兼容性设置 -->
+    <!--[if lt IE 6]>\xe8\x93\x9d\xe9\xb2\xb8\xe6\x99\xba\xe8\x90\xa5\x20\xe7\x89\x88\xe6\x9d\x83\xe6\x89\x80\xe6\x9c\x89<![endif]-->
+    
+    <!--自定义 js-->
+    <script src="${STATIC_URL}js/common.js" type="text/javascript"></script>
+    <script src="${STATIC_URL}js/index.js" type="text/javascript"></script>
+    <script src="${STATIC_URL}js/detail.js" type="text/javascript"></script>
+    <script src="${STATIC_URL}js/tab.js" type="text/javascript"></script>
+
+  </body>
+</html>
