@@ -143,6 +143,11 @@ def get_operate_logs(request):
         all_logs.append(v)
     return render_json(all_logs)
 
+ def all_check_page(request):
+
+    return render_mako_context(request, '/home_application/all_check.html')
+
+
 
 def create_vulnscan_page(request):
 
