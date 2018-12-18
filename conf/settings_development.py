@@ -11,15 +11,15 @@ See the License for the specific language governing permissions and limitations 
 用于本地开发环境的全局配置
 """
 
-from settings import APP_ID
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': APP_ID,
-		'USER': 'root',
-		'PASSWORD': '@86Dj3Y(it',
-		'HOST': '172.50.20.22',
-		'port': '3306'
+        'NAME':"app_id",
+        'USER': 'root',
+        'PASSWORD': '666888',
+        'HOST': '127.0.0.1',
+        'port': '3306'
     }
 }
+

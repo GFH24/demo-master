@@ -97,9 +97,6 @@ def get_hosts(client, biz_id, ip_list):
         data = resp.get('data', {}).get('info', {})
         for _d in data:
             ip = _d.get('host', {}).get('bk_host_innerip')
-            set_name = _d.get('set', {})[0].get('bk_set_name')
-            module_name = _d.get('module', {})[0].get('bk_module_name')
-            cloud_name = _d.get('host', {}).get('bk_cloud_id')[0].get('bk_inst_name')
             os_type = _d.get('host', {}).get('bk_os_name')
 
             host = {

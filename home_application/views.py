@@ -5,17 +5,14 @@ from home_application.models import ExcRecord, UserInfo, LoginInfo,VulnScanTasks
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from blueking.component.shortcuts import get_client_by_request
 from home_application.models import Logs
-from home_application.utils import get_job_instance_id,get_job_result,get_hosts
+from home_application.service import bks,vulnscans,SOCconnect
+from home_application.util import get_job_instance_id,get_job_result,get_hosts
 from django.db.models import Q,F
 import base64
 import json
 import sys
 import time
-import get_client_by_request
 sys.path.append('home_application/service/')
-import bks
-import vulnscans
-import SOCconnect
 
 # page_request_start
 
@@ -143,7 +140,7 @@ def get_operate_logs(request):
         all_logs.append(v)
     return render_json(all_logs)
 
- def all_check_page(request):
+def all_check_page(request):
 
     return render_mako_context(request, '/home_application/all_check.html')
 
