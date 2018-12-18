@@ -9,52 +9,48 @@
                 <div class="king-panel8-title king-info ">创建基线扫描任务</div>
         </div>
 	</div>
-</div>
 
-          	            <div class="king-block-content">
-						<table class="table mb0 pr15 ranger-box ">
-							<thead>
-								<tr>
-									<th >请选择主机</th>
-									<th >IP</th>
-									<th >系统类型</th>
 
-								</tr>
-							</thead>
-							<tbody>
+	<div class="king-block-content">
+		<table class="table mb0 pr15 ranger-box ">
+			<thead>
+			<tr>
+				<th >请选择主机</th>
+				<th >IP</th>
+				<th >系统类型</th>
 
-							</tbody>
-						</table>
-						<template id="tpl_15390010170442">
-							<tr>
-								<td><input type="checkbox" class="bk-top5" value="#ip#" /></td>
-								<td >#ip#</td>
-								<td >#os_type#</td>
-							</tr>
-						</template>
-						<!-- 设置面板End -->
-							<!-- 下拉框模板 -->
-							<template id="app_tpl">
-								<option value="#id#">#name#</option>
-							</template>
-						<!-- 设置面板End -->
-				</div>
-                <div class="form-group clearfix ">
-                    <label class="col-sm-3 control-label bk-lh30 pt0">请输入脚本：</label>
-                    <div class="col-sm-9">
-						<input type="text" class="form-control bk-valign-top" id="command" placeholder="请输入指令">
-					</div>
-                </div>
-                <div class="form-group clearfix">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <button type="button" class="king-btn mr10  king-success" onclick="execute(this)">执行</button>
+			</tr>
+			</thead>
+			<tbody>
 
-                    </div>
-                </div>
-			    </form>
-            </div>
+			</tbody>
+		</table>
+		<template id="tpl_15390010170442">
+			<tr>
+				<td><input type="checkbox" class="bk-top5" value="#ip#" /></td>
+				<td >#ip#</td>
+				<td >#os_type#</td>
+			</tr>
+		</template>
+		<!-- 设置面板End -->
+		<!-- 下拉框模板 -->
+		<template id="app_tpl">
+			<option value="#id#">#name#</option>
+		</template>
+		<!-- 设置面板End -->
+	</div>
+	<div class="form-group clearfix ">
+		<label class="col-sm-3 control-label bk-lh30 pt0">请输入脚本：</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control bk-valign-top" id="command" placeholder="请输入指令">
 		</div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-sm-9 col-sm-offset-3">
+			<button type="button" class="king-btn mr10  king-success" onclick="execute(this)">执行</button>
 
+		</div>
+	</div>
 		<div class="king-layout2-main mt15">
 				<form class="form-horizontal">
 					<div class="panel panel-default mb0">
@@ -74,7 +70,7 @@
 					</div>
 				</form>
 		</div>
-
+</div>
 
 </%block>
 
