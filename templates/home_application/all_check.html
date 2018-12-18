@@ -89,12 +89,12 @@
             language:language
             });
             var t = $("#table2_demo4").DataTable();//获取datatables对象
-            //下载按钮绑定事件
-          $("#table2_demo4 tbody").on('click', 'a.download', function(){
+            //按钮绑定事件
+          $("#table2_demo4 tbody").on('click', 'a.remove', function(){
          var row = t.row( $(this).parents('tr') ),//获取按钮所在的行
           data = row.data();
         if(confirm('确定要下载'+data.ID+' ?')){
-          row.download().draw();
+          row.remove().draw();
         }
 
     });
