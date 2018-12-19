@@ -14,7 +14,6 @@ from django.conf.urls import patterns
 urlpatterns = patterns(
     'home_application.views',
     (r'^$', 'home'),
-    (r'^all_check/$', 'all_check_page'),
     (r'^all_vulnscan/$', 'all_vulnscan_page'),
     (r'^create_vulnscan/$', 'create_vulnscan_page'),
     (r'^vulnscan_report/$', 'vulnscan_report_page'),
@@ -24,7 +23,6 @@ urlpatterns = patterns(
     (r'^pushfile/$', 'pushfile'),
     (r'^user_manage/$', 'user_manage'),
     (r'^update_user/$', 'update_user'),
-
     (r'^basecheck/$', 'basecheck'),
     (r'^exccmd/$', 'exccmd'),
     (r'^filedistrib/$', 'filedistrib'),

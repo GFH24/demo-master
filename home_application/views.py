@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import pdb
+
 from common.mymako import render_mako_context, render_json
 from django.http import HttpResponse
 from home_application.models import ExcRecord, UserInfo, LoginInfo,VulnScanTasks
@@ -41,9 +43,12 @@ def home(request):
 
 
 #######################
-# 调用配置平台API获取所有业务
+# 执行参数表单数据获取，业务，IP，作业
 #######################
 def get_biz_list(request):
+    """
+        获取所有业务
+    """
     biz_list = []
     client = get_client_by_request(request)
     kwargs = {
@@ -68,9 +73,12 @@ def get_biz_list(request):
 #######################
 def get_host_list(request):
     biz_id = int(request.GET.get('biz_id'))
+    print(biz_id)
     ip_list = [request.GET.get("ip")]
+    print(ip_list)
     client = get_client_by_request(request)
     host_list = get_hosts(client, biz_id, ip_list)
+    print(host_list)
 
     result = {'result': True, 'data': host_list}
 
