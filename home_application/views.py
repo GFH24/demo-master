@@ -73,15 +73,10 @@ def get_biz_list(request):
 #######################
 def get_host_list(request):
     biz_id = int(request.GET.get('biz_id'))
-    print(biz_id)
     ip_list = [request.GET.get("ip")]
-    print(ip_list)
     client = get_client_by_request(request)
     host_list = get_hosts(client, biz_id, ip_list)
-    print(host_list)
-
     result = {'result': True, 'data': host_list}
-
     return render_json(result)
 
 
@@ -274,10 +269,10 @@ def get_vulnscan_tasks(request):
 
 def base_check(request):
     host = bks.get_device(request)
-    logininfo = validate_user(request)[1]
+    # logininfo = validate_user(request)[1]
     ctx = {
             'host': host,
-            'logininfo': logininfo
+            # 'logininfo': logininfo
     }
     return render_mako_context(request, '/home_application/base_check.html', ctx)
 

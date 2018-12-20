@@ -8,9 +8,14 @@
         <div class="king-panel8-header p20" role="tab">
                 <div class="king-panel8-title king-info ">创建基线扫描任务</div>
         </div>
-	</div>
-
-
+	<form class="form-horizontal">
+                <div class="form-group clearfix ">
+                    <label class="col-sm-3 control-label bk-lh30 pt0">请选择业务：</label>
+                    <div class="col-sm-9">
+                        <select name="" id="biz_id" class="form-control bk-valign-top">
+                        </select>
+                    </div>
+				</div>
 	<div class="king-block-content">
 		<table class="table mb0 pr15 ranger-box ">
 			<thead>
@@ -48,9 +53,9 @@
 	<div class="form-group clearfix">
 		<div class="col-sm-9 col-sm-offset-3">
 			<button type="button" class="king-btn mr10  king-success "  onclick="execute(this)">执行</button>
-
 		</div>
 	</div>
+	</form>
 		<div class="king-layout2-main mt15">
 				<form class="form-horizontal">
 					<div class="panel panel-default mb0">
@@ -69,7 +74,8 @@
 						</div>
 					</div>
 				</form>
-		</div>
+	     </div>
+	</div>
 </div>
 
 </%block>

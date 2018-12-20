@@ -1,7 +1,6 @@
 /** !
  *	indexjs
  */
-
 (function() {
 
     // 侧栏展开折叠

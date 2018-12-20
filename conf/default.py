@@ -31,7 +31,7 @@ from django.conf.global_settings import *  # noqa
 # ==============================================================================
 # 在蓝鲸智云开发者中心 -> 点击应用ID -> 基本信息 中获取 APP_ID 和 APP_TOKEN 的值
 APP_ID = 'demo24'
-APP_TOKEN = 'd9e3ac43-f87b-40d2-a3d2-087f2a0b7685 '
+APP_TOKEN = 'd9e3ac43-f87b-40d2-a3d2-087f2a0b7685'
 # 蓝鲸智云开发者中心的域名，形如：http://paas.bking.com
 BK_PAAS_HOST = 'http://paas.bk.com'
 

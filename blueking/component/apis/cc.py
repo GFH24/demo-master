@@ -152,3 +152,18 @@ class CollectionsCC(object):
             client=self.client, method='POST', path='/api/c/compapi/cc/update_set_service_status/',
             description=u'更新集群状态',
         )
+        self.update_set_service_status = ComponentAPI(
+            client=self.client, method='POST', path='/api/c/compapi/cc/update_set_service_status/',
+            description=u'更新集群状态',
+        )
+        self.search_business = ComponentAPI(
+            client=self.client, method='POST', path='/api/c/compapi/v2/cc/search_business/',
+            description=u'查询业务',
+        )
+        self.search_host = ComponentAPI(
+            client=self.client, method='POST', path='/api/c/compapi/v2/cc/search_host/',
+            description=u'查询业务',
+        )
+
+
+
