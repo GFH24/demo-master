@@ -3,14 +3,16 @@ from blueking.component.shortcuts import get_client_by_user
 from home_application.models import Logs
 import time
 import base64
+
 import pdb
 
 
 def get_job_instance_id(client, biz_id, ip, command):
     script_content = base64.b64encode(command)
+    print script_content
     kwargs = {
         'bk_biz_id': biz_id,
-        'script_content': script_content,
+        "script_content": script_content,
         "script_timeout": 1000,
         "account": "root",
         "script_type": 1,
@@ -19,9 +21,10 @@ def get_job_instance_id(client, biz_id, ip, command):
                 "bk_cloud_id": 0,
                 "ip": ip
             }
-        ],
+        ]
     }
     resp = client.job.fast_execute_script(**kwargs)
+    print(resp)
 
     if resp.get('result'):
         job_instance_id = resp.get('data').get('job_instance_id')

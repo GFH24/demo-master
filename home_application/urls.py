@@ -23,7 +23,6 @@ urlpatterns = patterns(
     (r'^pushfile/$', 'pushfile'),
     (r'^user_manage/$', 'user_manage'),
     (r'^update_user/$', 'update_user'),
-    (r'^basecheck/$', 'basecheck'),
     (r'^exccmd/$', 'exccmd'),
     (r'^filedistrib/$', 'filedistrib'),
     (r'^uploadtxt/$', 'uploadtxt'),

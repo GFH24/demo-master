@@ -92,6 +92,10 @@ def execute_job(request):
     command = request.GET.get('command')
     # 调用作业平台API，获取作业执行实例ID
     client = get_client_by_request(request)
+    print (client)
+    print (biz_id)
+    print (ip)
+    print (command)
     result, job_instance_id = get_job_instance_id(client, biz_id, ip, command)
 
     result = {'result': result, 'data': job_instance_id}
@@ -268,13 +272,8 @@ def get_vulnscan_tasks(request):
     return render_json(all_tasks)
 
 def base_check(request):
-    host = bks.get_device(request)
-    # logininfo = validate_user(request)[1]
-    ctx = {
-            'host': host,
-            # 'logininfo': logininfo
-    }
-    return render_mako_context(request, '/home_application/base_check.html', ctx)
+
+    return render_mako_context(request, '/home_application/base_check.html',)
 
 
 def cmdexecute(request):
@@ -363,10 +362,10 @@ def vulnscan(request):
 # base_check_function_start
 
 
-def basecheck(request):
-        ip = request.POST.get('ip')
-        vulnscans.basechecks(ip, request)
-        return render_json({'result': True})
+# def basecheck(request):
+#         ip = request.POST.get('ip')
+#         vulnscans.basechecks(ip, request)
+#         return render_json({'result': True})
 
                 
 # base_check_function_end

@@ -121,7 +121,7 @@
 			$("#biz_id").change(function(){
 				var biz_id = $("#biz_id").val();
 				var ip = $('#innerip').val();
-				//console.log(biz_id)
+				console.log(biz_id)
 				get_host_list(biz_id,ip);
 
 			});
@@ -192,7 +192,7 @@
 			var command = $("#command").val();
 			console.log(biz_id,ip,command)
 			$.get('${SITE_URL}execute_job/',{'biz_id':biz_id,'ip':ip,'command':command},function(data){
-				console.log(data)
+				console.log(data.result)
                 if(data.result){
                     var job_instance_id = data.data;
                     // 异步请求后台数据

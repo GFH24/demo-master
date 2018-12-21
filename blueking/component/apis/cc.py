@@ -162,7 +162,11 @@ class CollectionsCC(object):
         )
         self.search_host = ComponentAPI(
             client=self.client, method='POST', path='/api/c/compapi/v2/cc/search_host/',
-            description=u'查询业务',
+            description=u'查询业务主机',
+        )
+        self. get_job_instance_log = ComponentAPI(
+            client=self.client, method='POST', path='/api/c/compapi/v2/job/get_job_instance_log/',
+            description=u'根据作业实例ID查询作业执行日志',
         )
 
 

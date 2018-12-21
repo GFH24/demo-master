@@ -3,203 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="196b4ee1-5d6a-47bb-9d17-bd76011b3775" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/.idea/helloworld.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/accounts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/backends.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/decorators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/http.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/middlewares.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/migrations/0002_initial_user_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/account/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/decorators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/migrations/0002_initial_app_control.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/app_control/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/apis/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/apis/bk_login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/apis/cc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/apis/cmsi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/apis/job.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/collections.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/conf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/exceptions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/shortcuts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/blueking/component/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/context_processors.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/decorators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/middlewares.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/mymako.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/pxfilter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/common/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/conf/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/conf/default.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/conf/settings_development.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/conf/settings_production.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/conf/settings_testing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/error_pages/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/error_pages/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/error_pages/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/error_pages/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/error_pages/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/error_pages/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/error_pages/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/framework.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/home_application/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/home_application/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/home_application/celery_tasks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/home_application/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/home_application/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/home_application/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/home_application/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/changelists.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/forms.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/ie.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/css/widgets.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/changelist-bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/changelist-bg_rtl.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/default-bg-reverse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/default-bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/deleted-overlay.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/gis/move_vertex_off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/gis/move_vertex_on.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon-no.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon-unknown.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon-yes.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_addlink.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_alert.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_calendar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_changelink.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_clock.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_deletelink.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_error.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_searchbox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/icon_success.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/inline-delete-8bit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/inline-delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/inline-restore-8bit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/inline-restore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/inline-splitter-bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/nav-bg-grabber.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/nav-bg-reverse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/nav-bg-selected.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/nav-bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/selector-icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/selector-search.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/sorting-icons.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/tooltag-add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/img/tooltag-arrowright.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/LICENSE-JQUERY.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/SelectBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/SelectFilter2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/actions.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/calendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/collapse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/collapse.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/inlines.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/inlines.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/jquery.init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/prepopulate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/prepopulate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/related-widget-wrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/timeparse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/admin/js/urlify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bkDialog-1.0/css/ui-dialog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bkDialog-1.0/js/dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/css/bootstrap_noresponsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/js/bootstrap-treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/assets/bootstrap-3.3.4/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/css/bk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/css/bootstrap_noresponsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/crown.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/dev-guide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/expre_403.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/expre_500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/expre_login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/getheadimg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/icom_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/icom_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/icom_03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/img/weixin_icom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/js/csrftoken.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/js/jquery-1.10.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/js/jquery.json-2.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/js/settings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/401.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/403.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/account/func_check_failed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/admin/base_site.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/admin/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/home_application/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/home_application/dev_guide.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/home_application/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/wsgi.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blueking/component/apis/cc.py" beforeDir="false" afterPath="$PROJECT_DIR$/blueking/component/apis/cc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/default.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home_application/service/bks.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/service/bks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_application/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_application/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home_application/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initdbsql.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home_application/all_check.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_application/all_check.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home_application/base_check.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_application/base_check.html" afterDir="false" />
     </list>
@@ -211,11 +20,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/home_application/base_check.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="193" column="68" selection-start-line="193" selection-start-column="66" selection-end-line="193" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home_application/service/bks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="114" column="72" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="72" />
+              <folding>
+                <element signature="e#23#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/home_application/all_check.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/settings_development.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="268">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/settings_production.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -223,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home_application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
+            <state relative-caret-position="19">
+              <caret line="130" selection-start-line="130" selection-end-line="147" selection-end-column="32" />
               <folding>
                 <element signature="e#24#34#0" expanded="true" />
               </folding>
@@ -233,81 +81,52 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blueking/component/apis/cc.py">
+        <entry file="file://$PROJECT_DIR$/home_application/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="164" column="32" lean-forward="true" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home_application/all_check.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home_application/base_check.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-87">
-              <caret line="98" column="30" lean-forward="true" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home_application/all_vulnscan.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="72" lean-forward="true" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
+            <state relative-caret-position="342">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
-                <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/settings_production.py">
+        <entry file="file://$PROJECT_DIR$/blueking/component/apis/job.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="206">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home_application/create_vulnscan.html">
+        <entry file="file://$PROJECT_DIR$/blueking/component/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-800">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="8" />
+            <state relative-caret-position="-959">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/django/core/management/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="509">
+              <caret line="353" selection-start-line="353" selection-end-line="353" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -318,6 +137,18 @@
       <find>initdb</find>
       <find>ming-app</find>
       <find>\u84dd\u9cb8</find>
+      <find>fast_execute_script</find>
+      <find>get_job_instance_log</find>
+      <find>app_code</find>
+      <find>#app_tpl</find>
+      <find>serach</find>
+      <find>search_host</find>
+      <find>get_host_list</find>
+      <find>get_job_instance_id</find>
+      <find>content</find>
+      <find>.fast_execute_script</find>
+      <find>app_id</find>
+      <find>get_device</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\admin\Desktop\demo-master-master-master</dir>
@@ -330,31 +161,38 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/home_application/urls.py" />
         <option value="$PROJECT_DIR$/conf/default.py" />
-        <option value="$PROJECT_DIR$/home_application/service/bks.py" />
         <option value="$PROJECT_DIR$/static/js/index.js" />
         <option value="$PROJECT_DIR$/initdbsql.txt" />
-        <option value="$PROJECT_DIR$/templates/home_application/base_check.html" />
         <option value="$PROJECT_DIR$/blueking/component/apis/cc.py" />
-        <option value="$PROJECT_DIR$/home_application/views.py" />
         <option value="$PROJECT_DIR$/templates/home_application/all_check.html" />
+        <option value="$PROJECT_DIR$/home_application/urls.py" />
+        <option value="$PROJECT_DIR$/home_application/service/uti.py" />
+        <option value="$PROJECT_DIR$/templates/home_application/base_check.html" />
+        <option value="$PROJECT_DIR$/blueking/component/README" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/home_application/service/bks.py" />
+        <option value="$PROJECT_DIR$/home_application/util.py" />
+        <option value="$PROJECT_DIR$/home_application/views.py" />
+        <option value="$PROJECT_DIR$/conf/settings_production.py" />
         <option value="$PROJECT_DIR$/conf/settings_development.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="868" />
-    <option name="y" value="81" />
-    <option name="width" value="877" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1052" />
+    <option name="y" value="94" />
+    <option name="width" value="756" />
     <option name="height" value="818" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,12 +203,23 @@
             <path>
               <item name="demo-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo-master" type="462c0819:PsiDirectoryNode" />
+              <item name="blueking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo-master" type="462c0819:PsiDirectoryNode" />
               <item name="conf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo-master" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="home_application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo-master" type="462c0819:PsiDirectoryNode" />
+              <item name="home_application" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo-master" type="b2602c69:ProjectViewProjectNode" />
@@ -393,6 +242,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,7 +337,27 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24657534" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22550052" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30911064" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.29609543" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.44902387" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3298731" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08851422" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -499,26 +369,6 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4121475" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32936078" />
-      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3298731" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30911064" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36008677" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3298731" />
@@ -575,31 +425,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684">
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app1/blueking/component/apis/cc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2443" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app1/blueking/component/apis/cc.py" />
     <entry file="file://$PROJECT_DIR$/blueking/component/shortcuts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -617,30 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/default.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="49" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/service/bks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1740">
-          <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
-          <folding>
-            <element signature="e#23#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -648,27 +454,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app1/conf/default.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="33" column="50" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/initdbsql.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="98" column="30" lean-forward="true" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app1/conf/default.py" />
+    <entry file="file://$PROJECT_DIR$/initdbsql.txt" />
     <entry file="file://$PROJECT_DIR$/templates/home_application/create_vulnscan.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-800">
@@ -676,17 +463,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blueking/component/apis/cc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="173" lean-forward="true" selection-start-line="169" selection-start-column="9" selection-end-line="173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blueking/component/utils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blueking/component/apis/cc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="164" column="32" lean-forward="true" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -700,41 +490,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/views.py">
+    <entry file="file://C:/Python27/Lib/base64.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
+        <state relative-caret-position="-2408">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/service/uti.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="37" selection-start-line="37" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blueking/component/apis/job.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blueking/component/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-959">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/django/core/management/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="353" selection-start-line="353" selection-end-line="353" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_application/base_check.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="193" column="68" selection-start-line="193" selection-start-column="66" selection-end-line="193" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
-            <element signature="e#24#34#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home_application/all_check.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="97">
+          <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home_application/base_check.html">
+    <entry file="file://$PROJECT_DIR$/home_application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state relative-caret-position="19">
+          <caret line="130" selection-start-line="130" selection-end-line="147" selection-end-column="32" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/settings_production.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="268">
           <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/settings_development.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="268">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/service/bks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="114" column="72" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="72" />
+          <folding>
+            <element signature="e#23#85#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

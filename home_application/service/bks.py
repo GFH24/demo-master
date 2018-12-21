@@ -92,8 +92,8 @@ def get_device(request):
             )
             response = requests.post(purl, data=post_data, headers=head_data)
             result = response.json()
+            print result['data']
             return result['data']['info']
-    
     except Exception, e:
             print 'get_device error:'
             print e
