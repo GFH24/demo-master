@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="196b4ee1-5d6a-47bb-9d17-bd76011b3775" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueking/component/apis/cc.py" beforeDir="false" afterPath="$PROJECT_DIR$/blueking/component/apis/cc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home_application/service/bks.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/service/bks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_application/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_application/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_application/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home_application/all_check.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_application/all_check.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home_application/base_check.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_application/base_check.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +16,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home_application/base_check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
+            <state relative-caret-position="3667">
               <caret line="193" column="68" selection-start-line="193" selection-start-column="66" selection-end-line="193" selection-end-column="68" />
             </state>
           </provider>
@@ -32,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home_application/service/bks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="114" column="72" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="72" />
+            <state relative-caret-position="2263">
+              <caret line="176" column="37" selection-start-line="176" selection-start-column="37" selection-end-line="176" selection-end-column="37" />
               <folding>
                 <element signature="e#23#85#0" expanded="true" />
               </folding>
@@ -44,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home_application/all_check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+            <state relative-caret-position="1349">
+              <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -53,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/settings_development.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="380">
               <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
             </state>
           </provider>
@@ -62,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/settings_production.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="380">
               <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="31" />
             </state>
           </provider>
@@ -71,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home_application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="2204">
               <caret line="130" selection-start-line="130" selection-end-line="147" selection-end-column="32" />
               <folding>
                 <element signature="e#24#34#0" expanded="true" />
@@ -95,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blueking/component/apis/job.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="589">
               <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
             </state>
           </provider>
@@ -104,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blueking/component/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-959">
+            <state relative-caret-position="399">
               <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
             </state>
           </provider>
@@ -113,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://C:/Python27/Lib/site-packages/django/core/management/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
+            <state relative-caret-position="6403">
               <caret line="353" selection-start-line="353" selection-end-line="353" />
             </state>
           </provider>
@@ -147,8 +140,8 @@
       <find>get_job_instance_id</find>
       <find>content</find>
       <find>.fast_execute_script</find>
-      <find>app_id</find>
       <find>get_device</find>
+      <find>app_id</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\admin\Desktop\demo-master-master-master</dir>
@@ -171,11 +164,11 @@
         <option value="$PROJECT_DIR$/templates/home_application/base_check.html" />
         <option value="$PROJECT_DIR$/blueking/component/README" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/home_application/service/bks.py" />
         <option value="$PROJECT_DIR$/home_application/util.py" />
         <option value="$PROJECT_DIR$/home_application/views.py" />
         <option value="$PROJECT_DIR$/conf/settings_production.py" />
         <option value="$PROJECT_DIR$/conf/settings_development.py" />
+        <option value="$PROJECT_DIR$/home_application/service/bks.py" />
       </list>
     </option>
   </component>
@@ -246,7 +239,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ljm-demo2-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -335,7 +328,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22550052" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -497,9 +489,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/service/uti.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/service/uti.py" />
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -521,27 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blueking/component/apis/job.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blueking/component/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-959">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/django/core/management/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="353" selection-start-line="353" selection-end-line="353" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/default.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="499">
@@ -551,8 +520,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home_application/base_check.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
+        <state relative-caret-position="3667">
           <caret line="193" column="68" selection-start-line="193" selection-start-column="66" selection-end-line="193" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_application/all_check.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1349">
+          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/settings_development.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/settings_production.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2204">
+          <caret line="130" selection-start-line="130" selection-end-line="147" selection-end-column="32" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -566,41 +566,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home_application/all_check.html">
+    <entry file="file://$PROJECT_DIR$/blueking/component/apis/job.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        <state relative-caret-position="589">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/views.py">
+    <entry file="file://$PROJECT_DIR$/blueking/component/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="130" selection-start-line="130" selection-end-line="147" selection-end-column="32" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="399">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/settings_production.py">
+    <entry file="file://C:/Python27/Lib/site-packages/django/core/management/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/settings_development.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="6403">
+          <caret line="353" selection-start-line="353" selection-end-line="353" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home_application/service/bks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="114" column="72" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="72" />
+        <state relative-caret-position="2263">
+          <caret line="176" column="37" selection-start-line="176" selection-start-column="37" selection-end-line="176" selection-end-column="37" />
           <folding>
             <element signature="e#23#85#0" expanded="true" />
           </folding>
