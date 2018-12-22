@@ -31,9 +31,9 @@ def get_user(request):
         purl = 'http://paas.bk.com/api/c/compapi/v2/bk_login/get_user/'
         post_data = json.dumps(
             {
-                "bk_app_code": "demo24",
-                "bk_app_secret": "d9e3ac43-f87b-40d2-a3d2-087f2a0b7685",
-                "bk_token": "_Y3pJjQWtigcH2GUwa4ub8H8zFaHvM1mHZJLpcLo2Jk",
+                "bk_app_code": app_code,
+                "bk_app_secret": app_secret,
+                "bk_token": bk_token,
             }
         )
         response = requests.post(purl, data=post_data, headers=head_data)
@@ -56,9 +56,9 @@ def get_user_list(request):
         purl = 'http://paas.bk.com/api/c/compapi/v2/bk_login/get_all_users/'
         post_data = json.dumps(
             {
-                "bk_app_code": "demo24",
-                "bk_app_secret": "d9e3ac43-f87b-40d2-a3d2-087f2a0b7685",
-                "bk_token": "_Y3pJjQWtigcH2GUwa4ub8H8zFaHvM1mHZJLpcLo2Jk",
+                "bk_app_code": app_code,
+                "bk_app_secret": app_secret,
+                "bk_token": bk_token,
                 "bk_role": 0
             }
         )
@@ -85,9 +85,9 @@ def get_device(request):
             purl = 'http://paas.bk.com/api/c/compapi/v2/cc/search_host/'
             post_data = json.dumps(
                 {
-                    "bk_app_code": 'demo24',
-                    "bk_app_secret": 'd9e3ac43-f87b-40d2-a3d2-087f2a0b7685',
-                    "bk_token": "_Y3pJjQWtigcH2GUwa4ub8H8zFaHvM1mHZJLpcLo2Jk",
+                 "bk_app_code": app_code,
+                 "bk_app_secret": app_secret,
+                 "bk_token": bk_token,
                 }
             )
             response = requests.post(purl, data=post_data, headers=head_data)
@@ -172,9 +172,9 @@ def push_file(src_file, target_path, ip, request):
         purl = 'http://paas.bk.com/api/c/compapi/v2/job/fast_push_file/'
         post_data = json.dumps(
             {
-                "bk_app_code": app_code,
-                "bk_app_secret": app_secret,
-                "bk_token": bk_token,
+                "bk_app_code":app_code,
+                "bk_app_secret":app_secret,
+                "bk_token":bk_token,
                 "bk_biz_id": 2,
                 "file_target_path": target_path,
                 "file_source": [
