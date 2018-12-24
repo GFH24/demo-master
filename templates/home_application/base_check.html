@@ -47,7 +47,7 @@
 	<div class="form-group clearfix ">
 		<label class="col-sm-3 control-label bk-lh30 pt0">请输入脚本：</label>
 		<div class="col-sm-9">
-			<input type="text" class="form-control bk-valign-top" id="command" placeholder="请输入脚本">
+			<input type="text" class="form-control bk-valign-top" id="command" placeholder="请输入脚本指令">
 		</div>
 	</div>
 	<div class="form-group clearfix">
@@ -194,8 +194,10 @@
 			$.get('${SITE_URL}execute_job/',{'biz_id':biz_id,'ip':ip,'command':command},function(data){
 				console.log(data.result)
                 if(data.result){
+                	console.log("1111"+data.data)
                     var job_instance_id = data.data;
                     // 异步请求后台数据
+                    console.log("异步请求后台数据"+job_instance_id)
                     get_result(job_instance_id, biz_id, ip);
                 }else{
                     alert("刷新失败")

@@ -30,8 +30,9 @@ class CollectionsJOB(object):
             description=u'启动作业Ext(带全局变量启动)',
         )
         self.fast_execute_script = ComponentAPI(
-            client=self.client, method='POST', path='/api/c/compapi/job/fast_execute_script/',
-            description=u'快速执行脚本',
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/job/fast_execute_script/',
+            description=u'快速执行脚本'
         )
         self.fast_push_file = ComponentAPI(
             client=self.client, method='POST', path='/api/c/compapi/job/fast_push_file/',
@@ -64,4 +65,8 @@ class CollectionsJOB(object):
         self.save_cron = ComponentAPI(
             client=self.client, method='POST', path='/api/c/compapi/job/save_cron/',
             description=u'新建或保存定时作业',
+        )
+        self.get_job_instance_log = ComponentAPI(
+            client=self.client, method='POST', path='/api/c/compapi/v2/job/get_job_instance_log/',
+            description=u'根据作业实例ID查询作业执行日志',
         )

@@ -66,7 +66,6 @@ def get_biz_list(request):
             })
 
     result = {'result': resp.get('result'), 'data': biz_list}
-    print result
     return render_json(result)
 
 
@@ -79,7 +78,6 @@ def get_host_list(request):
     client = get_client_by_request(request)
     host_list = get_hosts(client, biz_id, ip_list)
     result = {'result': True, 'data': host_list}
-    print  result
     return render_json(result)
 
 
@@ -94,16 +92,12 @@ def execute_job(request):
     ip = request.GET.get('ip')
     command = request.GET.get('command')
     # 调用作业平台API，获取作业执行实例ID
-    client = get_client_by_request(request)
-    print (client)
-    print (biz_id)
-    print (ip)
-    print (command)
-    result, job_instance_id = get_job_instance_id(client, biz_id, ip, command)
-    print job_instance_id
+    # client = get_client_by_request(request)
+    # result, job_instance_id = get_job_instance_id(client, biz_id, ip, command)
+    # print job_instance_id
+    # result = {'result': result, 'data': job_instance_id}
+    result, job_instance_id =bks.exc_cmd(ip, command, request)
     result = {'result': result, 'data': job_instance_id}
-    # result =bks.exc_cmd(ip, command, request)
-    print result
     return render_json(result)
 
 

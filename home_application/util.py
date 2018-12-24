@@ -10,10 +10,10 @@ import pdb
 
 
 def get_job_instance_id(client, biz_id, ip, command):
+    print command
     script_content = base64.b64encode(command)
     print script_content
     kwargs = {
-        "app_id":1,
         "bk_biz_id": biz_id,
         "script_content": script_content,
         "script_timeout": 1000,

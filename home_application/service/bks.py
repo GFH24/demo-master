@@ -3,6 +3,7 @@ from blueking.component.shortcuts import get_client_by_request
 import requests
 import json
 import time
+import base64
 
 head_data = {'Content-Type': 'application/x-www-form-urlencoded'}
 retrytimes = 50
@@ -106,6 +107,7 @@ def exc_cmd(ip, command, request):
     app_code = get_bk_token(request)[1]
     app_secret = get_bk_token(request)[2]
     bk_token = get_bk_token(request)[0]
+    script_content = base64.b64encode(command)
     try:
         purl = 'http://paas.bk.com/api/c/compapi/v2/job/fast_execute_script/'
         post_data = json.dumps(
@@ -115,7 +117,7 @@ def exc_cmd(ip, command, request):
                 "bk_token": bk_token,
                 "bk_supplier_id": 0,
                 "bk_biz_id": 2,
-                "script_content": command,
+                "script_content": script_content,
                 "script_timeout": 1000,
                 "account": "root",
                 "is_param_sensitive": 0,
@@ -131,30 +133,32 @@ def exc_cmd(ip, command, request):
         response = requests.post(purl, data=post_data, headers=head_data)
         result = str(response.content)
         job_instance_id = result.split('"job_instance_id": ')[1].split(',')[0]
-
-        purl = 'http://paas.bk.com/api/c/compapi/v2/job/get_job_instance_log/'
-        post_data = json.dumps(
-            {
-                "bk_app_code": app_code,
-                "bk_app_secret": app_secret,
-                "bk_token": bk_token,
-                "bk_biz_id": 2,
-                "job_instance_id": job_instance_id
-            }
-        )
-        isfinished = 0
-        for i in range(0, retrytimes):
-            response = requests.post(purl, data=post_data, headers=head_data)
-            result = str(response.content)
-            status = result.split('"status": ')[1].split(',')[0]
-            if status == '3':
-                isfinished = 1
-                result = result.split('"log_content": "')[1].split('", "exit_code"')[0].split(r'\n')
-                return result
-            else:
-                time.sleep(pausetime)
-        if isfinished == 0:
-            return 'cmd_exc_timeout'
+        print "222"+job_instance_id
+        return result, job_instance_id
+        # purl = 'http://paas.bk.com/api/c/compapi/v2/job/get_job_instance_log/'
+        # post_data = json.dumps(
+        #     {
+        #         "bk_app_code": app_code,
+        #         "bk_app_secret": app_secret,
+        #         "bk_token": bk_token,
+        #         "bk_biz_id": 2,
+        #         "job_instance_id": job_instance_id
+        #     }
+        # )
+        # isfinished = 0
+        # for i in range(0, retrytimes):
+        #     response = requests.post(purl, data=post_data, headers=head_data)
+        #     result = str(response.content)
+        #     print "1111"+result
+        #     status = result.split('"status": ')[1].split(',')[0]
+        #     if status == '3':
+        #         isfinished = 1
+        #         result = result.split('"log_content": "')[1].split('", "exit_code"')[0].split(r'\n')
+        #         return result
+        #     else:
+        #         time.sleep(pausetime)
+        # if isfinished == 0:
+        #     return 'cmd_exc_timeout'
 
     except Exception, e:
         print 'exc_cmd error:'
