@@ -8,6 +8,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from blueking.component.shortcuts import get_client_by_request
 from home_application.models import Logs
 from home_application.service import bks,vulnscans,SOCconnect
+from home_application.service.bks import get_bk_token
 from home_application.util import get_job_instance_id,get_job_result,get_hosts
 from django.db.models import Q,F
 import base64
@@ -65,6 +66,7 @@ def get_biz_list(request):
             })
 
     result = {'result': resp.get('result'), 'data': biz_list}
+    print result
     return render_json(result)
 
 
@@ -77,6 +79,7 @@ def get_host_list(request):
     client = get_client_by_request(request)
     host_list = get_hosts(client, biz_id, ip_list)
     result = {'result': True, 'data': host_list}
+    print  result
     return render_json(result)
 
 
@@ -97,8 +100,10 @@ def execute_job(request):
     print (ip)
     print (command)
     result, job_instance_id = get_job_instance_id(client, biz_id, ip, command)
-
+    print job_instance_id
     result = {'result': result, 'data': job_instance_id}
+    # result =bks.exc_cmd(ip, command, request)
+    print result
     return render_json(result)
 
 

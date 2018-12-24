@@ -41,6 +41,7 @@ def get_client_by_request(request, **kwargs):
 
 
 def get_client_by_user(user, **kwargs):
+    # type: (object, object) -> object
     """根据user实例返回一个client
 
     :param user: User实例或者User.username数据

@@ -1,5 +1,7 @@
+from requests import request
+
 from common.log import logger
-from blueking.component.shortcuts import get_client_by_user
+from blueking.component.shortcuts import get_client_by_request
 from home_application.models import Logs
 import time
 import base64
@@ -11,7 +13,8 @@ def get_job_instance_id(client, biz_id, ip, command):
     script_content = base64.b64encode(command)
     print script_content
     kwargs = {
-        'bk_biz_id': biz_id,
+        "app_id":1,
+        "bk_biz_id": biz_id,
         "script_content": script_content,
         "script_timeout": 1000,
         "account": "root",
@@ -24,8 +27,7 @@ def get_job_instance_id(client, biz_id, ip, command):
         ]
     }
     resp = client.job.fast_execute_script(**kwargs)
-    print(resp)
-
+    print resp
     if resp.get('result'):
         job_instance_id = resp.get('data').get('job_instance_id')
     else:

@@ -82,24 +82,24 @@ def get_device(request):
     app_secret = get_bk_token(request)[2]
     bk_token = get_bk_token(request)[0]
     try:
-            purl = 'http://paas.bk.com/api/c/compapi/v2/cc/search_host/'
-            post_data = json.dumps(
-                {
-                 "bk_app_code": app_code,
-                 "bk_app_secret": app_secret,
-                 "bk_token": bk_token,
-                }
-            )
-            response = requests.post(purl, data=post_data, headers=head_data)
-            result = response.json()
-            print result['data']
-            return result['data']['info']
+        purl = 'http://paas.bk.com/api/c/compapi/v2/cc/search_host/'
+        post_data = json.dumps(
+            {
+                "bk_app_code": app_code,
+                "bk_app_secret": app_secret,
+                "bk_token": bk_token,
+            }
+        )
+        response = requests.post(purl, data=post_data, headers=head_data)
+        result = response.json()
+        print result['data']
+        return result['data']['info']
     except Exception, e:
-            print 'get_device error:'
-            print e
+        print 'get_device error:'
+        print e
 
 
-def exc_cmd(ip, cmd, request):
+def exc_cmd(ip, command, request):
     """
     执行命令（蓝鲸）
     """
@@ -115,7 +115,7 @@ def exc_cmd(ip, cmd, request):
                 "bk_token": bk_token,
                 "bk_supplier_id": 0,
                 "bk_biz_id": 2,
-                "script_content": cmd,
+                "script_content": command,
                 "script_timeout": 1000,
                 "account": "root",
                 "is_param_sensitive": 0,
@@ -155,12 +155,12 @@ def exc_cmd(ip, cmd, request):
                 time.sleep(pausetime)
         if isfinished == 0:
             return 'cmd_exc_timeout'
-    
+
     except Exception, e:
         print 'exc_cmd error:'
         print e
-    
-        
+
+
 def push_file(src_file, target_path, ip, request):
     """
     分发文件（蓝鲸）
@@ -172,9 +172,9 @@ def push_file(src_file, target_path, ip, request):
         purl = 'http://paas.bk.com/api/c/compapi/v2/job/fast_push_file/'
         post_data = json.dumps(
             {
-                "bk_app_code":app_code,
-                "bk_app_secret":app_secret,
-                "bk_token":bk_token,
+                "bk_app_code": app_code,
+                "bk_app_secret": app_secret,
+                "bk_token": bk_token,
                 "bk_biz_id": 2,
                 "file_target_path": target_path,
                 "file_source": [
@@ -203,7 +203,7 @@ def push_file(src_file, target_path, ip, request):
         response = requests.post(purl, data=post_data, headers=head_data)
         result = str(response.content)
         return result
-        
+
     except Exception, e:
         print 'push_file error:'
         print e
