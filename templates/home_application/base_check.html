@@ -44,16 +44,64 @@
 		</template>
 		<!-- 设置面板End -->
 	</div>
-	<div class="form-group clearfix ">
-		<label class="col-sm-3 control-label bk-lh30 pt0">请输入脚本：</label>
-		<div class="col-sm-9">
-			<input type="text" class="form-control bk-valign-top" id="command" placeholder="请输入脚本指令">
-		</div>
-	</div>
-	<div class="form-group clearfix">
-		<div class="col-sm-9 col-sm-offset-3">
-			<button type="button" class="king-btn mr10  king-success "  onclick="execute(this)">执行</button>
-		</div>
+	<!--<div class="form-group clearfix ">-->
+		<!--<label class="col-sm-3 control-label bk-lh30 pt0">请输入指令：</label>-->
+		<!--<div class="col-sm-9">-->
+			<!--<input type="text" class="form-control bk-valign-top" id="command" placeholder="请输入指令">-->
+		<!--</div>-->
+	<!--</div>-->
+		<!--<label class="col-sm-3 control-label">基线扫描脚本：</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<div style="width:100%;height: 40px;padding-top: 5px;">-->
+                                    <!--<form id="getUploadFile" method="post" enctype="multipart/form-data">-->
+                                    <!--<div class="col-sm-4" style="margin-left: 15px;height: 10px;padding:2.5px;float:left;">-->
+                                    <!--&lt;!&ndash;<input name="files" id="fileupload"  type="file" />&ndash;&gt;-->
+                                        <!--<input type="file" name="scriptfileupload" id="cmd" onchange="getUploadFile(this);"/>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-2">-->
+                                        <!--<input type="button" class="king-btn king-primary mr10 navbar-blue" value="上传" style="width:100%;"/>-->
+                                    <!--</div>-->
+										<!--</form><span class="text-danger mt5 fl">*</span>-->
+								<!--</div>-->
+							<!--</div>-->
+	 <div class="form-group">
+                            <label class="col-sm-3 control-label">基线脚本指令：</label>
+                            <div class="col-sm-8">
+                                <div style="width:100%;height: 40px;padding-top: 5px;">
+                                    <div class="col-sm-2 control-label">
+                                    <input onchange="change_value('01')" style="float:left;"  type="radio" checked name="command"
+                                            value="command"/>
+                                    <label>导入脚本</label>
+                                    </div>
+                                    <form id="MyForm" method="post" enctype="multipart/form-data" >
+										<div class="col-sm-4" style="margin-left: 15px;height: 10px;padding:2.5px;float:left;">
+										<!--<input name="files" id="fileupload"  type="file" />-->
+											<input type="file" name="uploadfile" id="fileupload" />
+										</div>
+										<div class="col-sm-2">
+											<input type="button" class="king-btn king-primary mr10 navbar-blue" value="上传" style="width:100%;" onclick="getuploadtxt();"/>
+										</div>
+                                    </form>
+
+									<span class="text-danger mt5 fl">*</span>
+                                </div>
+
+                                <div style="width:100%;height: 130px;">
+                                    <div class="col-sm-2 control-label" style="float:left;height: 40px;padding-top: 5px;">
+                                        <input onchange="change_value('02')" style="float:left;" type="radio" name="command" value="command"/>
+                                        <label>输入指令:</label>
+                                    </div>
+
+                                    <div class="col-sm-6 control-label" style="margin-left: 15px;height: 35px;padding:2.5px;float:left;">
+                                        <textarea class="form-control" rows="6" style="width:100%;" id="command" placeholder="格式:&#13;&#10;sh&#13;&#10;pl&#13;&#10;psl"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+		                    <div class="form-group clearfix">
+		                        <div class="col-sm-9 col-sm-offset-3">
+		 	                    <button type="button" class="king-btn mr10  king-success "  onclick="execute(this)">脚本执行</button>
+		                    </div>
 	</div>
 	</form>
 		<div class="king-layout2-main mt15">
@@ -182,6 +230,35 @@
 				}
 			});
 		}
+		//上传脚本指令
+        function getuploadtxt(){
+             var formData = new FormData();
+             var fileObj = document.getElementById('fileupload').files[0]; // js 获取文件对象
+             formData.append('uploadfile',fileObj);
+             formData.get('uploadfile');
+             formData.getAll('uploadfile');
+             console.log(formData)
+             console.log($( '#fileupload').serialize())
+             var fileName = fileObj.name
+          	 var jugeName = fileName.substring(fileName.lastIndexOf(".")+1).toLowerCase();
+			if(!(jugeName =='bat' || jugeName == 'sh' || jugeName =='py' || jugeName =='pl' || jugeName =='ps1')){
+			    alert("文件格式不符合要求")
+			}
+        $.ajax({
+            url:"${SITE_URL}getuploadtxt/",
+            type:"post",
+            data:formData,
+            processData:false,
+            contentType:false,
+            success:function(obj){
+                alert(obj["result"]);
+                $("#command").val(obj["command"]);
+            },
+            error:function(){
+                alert("上传失败!");
+            }
+        });
+    }
 
         /*
 		* 点击表单立即检查事件按钮，提交刷新主机资源利用率作业请求

@@ -15,6 +15,7 @@ import base64
 import json
 import sys
 import time
+
 sys.path.append('home_application/service/')
 
 # page_request_start
@@ -344,6 +345,25 @@ def uploadtxt(request):
         iplist = r[1]
         data = {'result': result, 'iplist': iplist}
         return HttpResponse(json.dumps(data), content_type='application/json')
+
+
+def getuploadtxt(request):
+    if request.method =="POST":
+         uploadfile = request.FILES.get('uploadfile')
+         print request.FILES
+         print uploadfile
+         u = uploadfile.read().split('\n')
+         command= ''
+         commanderror = ''
+    for fread in u:
+        fread = fread.strip()
+        command = command + fread + '\n'
+        print command
+        commanderror = commanderror + fread + ';'
+    result = '成功导入; 失败记录：' + commanderror
+    data = {'result': result, 'command': command}
+    print data
+    return HttpResponse(json.dumps(data), content_type='application/json')
 
 
 def vulnscan(request):

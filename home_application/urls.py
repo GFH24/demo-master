@@ -32,6 +32,7 @@ urlpatterns = patterns(
     (r'^base_check/$', 'base_check'),
     (r'^get_biz_list/$', 'get_biz_list'),
     (r'^get_host_list/$', 'get_host_list'),
+    (r'^getuploadtxt/$', 'getuploadtxt'),
     (r'^execute_job/$', 'execute_job'),
     (r'^get_result/$', 'get_result'),
 

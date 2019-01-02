@@ -134,21 +134,21 @@ $("#supplier").select2({ data: supplier });
 //上传IP列表
 function uploadtxt(){
         var form = document.getElementById('uploadtxt');
-        var formData = new FormData(form); 
-        $.ajax({ 
+        var formData = new FormData(form);
+        $.ajax({
             url:"${SITE_URL}uploadtxt/",
-            type:"post", 
-            data:formData, 
-            processData:false, 
-            contentType:false, 
+            type:"post",
+            data:formData,
+            processData:false,
+            contentType:false,
             success:function(obj){
-                alert(obj["result"]); 
+                alert(obj["result"]);
                 $("#iplist").val(obj["iplist"]);
             },
-            error:function(){ 
-                alert("连接失败!"); 
-            } 
-        });   
+            error:function(){
+                alert("连接失败!");
+            }
+        });
     }
 
 //提交创建任务
