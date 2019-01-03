@@ -101,7 +101,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'account.middlewares.LoginMiddleware',   # 登录鉴权中间件
-    'common.middlewares.CheckXssMiddleware',  # Xss攻击处理中间件
+    # 'common.middlewares.CheckXssMiddleware',  # Xss攻击处理中间件
 )
 
 INSTALLED_APPS = (
