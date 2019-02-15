@@ -157,7 +157,8 @@ def create_vulnscan_page(request):
 
     return render_mako_context(request, '/home_application/create_vulnscan.html')
 
-#创建漏扫任务
+
+# 创建漏扫任务
 def create_vulnscan_task(request):
     vulnscan_taskname = request.GET.get('vulnscan_taskname')
     supplierid = request.GET.get('supplier')
@@ -182,94 +183,303 @@ def create_vulnscan_task(request):
     excludetarget = ""
     ipv6 = "0"
     policyid = "4028fe023121e14a013146c3dd915b7f"
-    resultid=''
+    resultid = ''
     if scantarget:
         try:
-            third_session_id = SOCconnect.get_third_session_id()            
-            resultid = SOCconnect.create_task(third_session_id, soc_task_name, excludetarget, scantarget, ipv6, policyid)
+            third_session_id = SOCconnect.get_third_session_id()
+            s1 = '1'
+            resultid = SOCconnect.create_task(third_session_id, soc_task_name, excludetarget, scantarget, ipv6,
+                                              policyid)
             print resultid
-            #time.sleep(5)
-            soc_task_status_code,soc_task_status = SOCconnect.get_task_status(third_session_id, resultid)
-            print soc_task_status_code,soc_task_status
+            s1 = '2'
+            # time.sleep(5)
+            soc_task_status_code, soc_task_status = SOCconnect.get_task_status(third_session_id, resultid)
+            print soc_task_status_code, soc_task_status
+            s1 = '3'
             soc_task_progress = SOCconnect.get_task_progress(third_session_id, resultid) + u'%'
             print soc_task_progress
-            #SOCconnect.delete_task(third_session_id, resultid)
+            s1 = '4'
+            # SOCconnect.delete_task(third_session_id, resultid)
             SOCconnect.close_session(third_session_id)
-        except Exception,e:
+            s1 = '5'
+        except Exception, e:
             print "Creat VulnScan Task Failed!"
             print e
-    
+            s = 'Creat VulnScan Task Failed!' + s1
+
     if resultid:
-        VulnScanTasks.objects.create(vulnscan_taskname=vulnscan_taskname,version=u'天镜6070',supplier=supplier,iplist=scantarget,\
-        creator=creator,create_time=create_time,soc_task_name=soc_task_name,soc_task_resultid=resultid,\
-        soc_task_status=soc_task_status,soc_task_progress=soc_task_progress)
-        return render_json({'result': '创建任务成功！'})
+        VulnScanTasks.objects.create(vulnscan_taskname=vulnscan_taskname, version=u'天镜6070', supplier=supplier,
+                                     iplist=scantarget, \
+                                     creator=creator, create_time=create_time, soc_task_name=soc_task_name,
+                                     soc_task_resultid=resultid, \
+                                     soc_task_status=soc_task_status, soc_task_progress=soc_task_progress)
+        return render_json({'result': '创建任务成功！', 'info': '', 'sessionid': third_session_id, 'resid': resultid})
     else:
-        return render_json({'result': '创建任务失败！'}) 
+        return render_json({'result': '创建任务失败！', 'info': s, 'sessionid': third_session_id, 'resid': resultid})
+
+    # 获取漏扫结果清单
+
 
 def all_vulnscan_page(request):
-
     return render_mako_context(request, '/home_application/all_vulnscan.html')
 
+
+# 获取漏洞扫描结果（从SOC获取漏洞报告并存入数据库，再从数据库中读取漏洞数据）
 def vulnscan_report_page(request):
-    name = request.GET.get('name')
-    resultid = request.GET.get('resultid')
-    report = request.GET.get('report')
-    
-    if report=='false':
-        try:
-            third_session_id = SOCconnect.get_third_session_id()
-            resultHost = SOCconnect.get_task_result(third_session_id, resultid)
-            #VulnScanTasks.objects.filter(soc_task_resultid=ut.soc_task_resultid).update(soc_task_status=soc_task_status,soc_task_progress=soc_task_progress)
-            SOCconnect.close_session(third_session_id)
-        except Exception,e:
-            print "Update VulnScan Tasks Status Failed!"
-            print e
-        print resultHost
+    soc_task_resultid = request.GET.get('resultid')
+    task = VulnScanTasks.objects.filter(soc_task_resultid=soc_task_resultid)
+    if task.exists():
+        report = task[0].has_report
+        vulnscan_taskname = task[0].vulnscan_taskname
+        report_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+        if not report:
+            try:
+                third_session_id = SOCconnect.get_third_session_id()
+                resultHost = SOCconnect.get_task_result(third_session_id, soc_task_resultid)
+                for host in resultHost:
+                    hostip = host['hostIPStr']
+                    for vuln in host['resultVuln']:
+                        vuln_id = vuln['vulnID']
+                        vulnlist = SOCconnect.get_vulnerability(third_session_id, vuln['vulnID'])
+                        # print vulnlist
+                        vuln_name = vulnlist['nodeName']
+                        risk_level = vulnlist['riskLevel']
+                        short_desc = vulnlist['shortDesc']
+                        full_desc = vulnlist['fullDesc']
+                        repair_advice = vulnlist['repairAdvice']
+                        platforms = vulnlist['platforms']
+                        port = vuln['port']
+                        if port:
+                            for p in host['resultPort']:
+                                if port == p['servicePort']:
+                                    service = p['serviceName']
+                                    protocol = p['serviceProtocol']
+                        else:
+                            service = ''
 
-    ctx = {'name':name,'resultid':resultid,}
+                        if protocol == '6':
+                            protocol = 'TCP'
+                        elif protocol == '17':
+                            protocol = 'UDP'
+                        elif protocol == '1':
+                            protocol = 'SMP'
+                        elif protocol == '0':
+                            protocol = 'Other'
+                        else:
+                            protocol = ''
 
-    return render_mako_context(request, '/home_application/vulnscan_report.html',ctx)
+                        if risk_level == '1':
+                            risk_level = u'警告'
+                        elif risk_level == '2':
+                            risk_level = u'危险'
+                        elif risk_level == '3':
+                            risk_level = u'紧急'
+                        elif risk_level == '4':
+                            risk_level = u'信息'
 
-#呈现漏扫任务清单
-def get_vulnscan_tasks(request):   
-    #更新任务状态和进度
-    unfinish_tasks= VulnScanTasks.objects.exclude(Q(soc_task_status='完成')|Q(soc_task_status='失败')).all()
+                        VulnScanReport.objects.create(vulnscan_taskname=vulnscan_taskname,
+                                                      soc_task_resultid=soc_task_resultid, \
+                                                      hostip=hostip, port=port, service=service, protocol=protocol,
+                                                      vuln_id=vuln_id, vuln_name=vuln_name, \
+                                                      risk_level=risk_level, short_desc=short_desc, full_desc=full_desc,
+                                                      repair_advice=repair_advice, \
+                                                      platforms=platforms, report_time=report_time)
+                    VulnScanTasks.objects.filter(soc_task_resultid=soc_task_resultid).update(has_report=True)
+                SOCconnect.close_session(third_session_id)
+            except Exception, e:
+                print "Create VulnScan report Failed!"
+                print e
+
+        ctx = {'vulnscan_taskname': vulnscan_taskname, 'soc_task_resultid': soc_task_resultid, }
+        return render_mako_context(request, '/home_application/vulnscan_report.html', ctx)
+    else:
+        print u"任务ID不合法！"
+        return render_mako_context(request, '/500.html')
+
+
+# 获取漏扫任务清单
+def get_vulnscan_tasks(request):
+    # 更新任务状态和进度，并存入数据库
+    unfinish_tasks = VulnScanTasks.objects.exclude(Q(soc_task_status='完成') | Q(soc_task_status='失败')).all()
     if unfinish_tasks.exists():
         try:
             third_session_id = SOCconnect.get_third_session_id()
             for ut in unfinish_tasks:
-                print ut.soc_task_resultid
-                soc_task_status_code,soc_task_status = SOCconnect.get_task_status(third_session_id, ut.soc_task_resultid)
+                # print ut.soc_task_resultid
+                soc_task_status_code, soc_task_status = SOCconnect.get_task_status(third_session_id,
+                                                                                   ut.soc_task_resultid)
                 soc_task_progress = SOCconnect.get_task_progress(third_session_id, ut.soc_task_resultid) + u'%'
-                VulnScanTasks.objects.filter(soc_task_resultid=ut.soc_task_resultid).update(soc_task_status=soc_task_status,soc_task_progress=soc_task_progress)
+                VulnScanTasks.objects.filter(soc_task_resultid=ut.soc_task_resultid).update(
+                    soc_task_status=soc_task_status, soc_task_progress=soc_task_progress)
             SOCconnect.close_session(third_session_id)
-        except Exception,e:
+        except Exception, e:
             print "Update VulnScan Tasks Status Failed!"
-            print e 
-    #获取漏扫任务记录清单
+            print e
+
+            # 从数据库读取漏扫任务记录清单
     tasks = VulnScanTasks.objects.all()
-    all_tasks=[]
-    print tasks
-    #组装漏扫任务记录参数，返回给前端dataTable处理。
+    all_tasks = []
+    # 组装漏扫任务记录参数，返回给前端dataTable处理。
     for k in tasks:
         v = {
-            "ID":k.id,
-            "vulnscan_taskname":k.vulnscan_taskname,
-            "version":k.version,
-            "supplier":k.supplier,
-            "iplist":k.iplist,
-            "creator":k.creator,
-            "create_time":str(k.create_time),
-            #"finish_time":str(k.finish_time),
-            "soc_task_name":k.soc_task_name,
-            "soc_task_resultid":k.soc_task_resultid,
-            "soc_task_status":k.soc_task_status,
-            "soc_task_progress":float(k.soc_task_progress.strip('%')),
-            "has_report":k.has_report,
-            }
+            "ID": k.id,
+            "vulnscan_taskname": k.vulnscan_taskname,
+            "version": k.version,
+            "supplier": k.supplier,
+            "iplist": k.iplist,
+            "creator": k.creator,
+            "create_time": str(k.create_time),
+            # "finish_time":str(k.finish_time),
+            "soc_task_name": k.soc_task_name,
+            "soc_task_resultid": k.soc_task_resultid,
+            "soc_task_status": k.soc_task_status,
+            "soc_task_progress": float(k.soc_task_progress.strip('%')),
+            "has_report": k.has_report,
+        }
         all_tasks.append(v)
     return render_json(all_tasks)
+
+
+# 获取漏扫任务报告
+def get_vulnscan_report(request):
+    soc_task_resultid = request.GET.get('soc_task_resultid')
+    # print soc_task_resultid
+    # 获取漏洞清单
+    vulns = VulnScanReport.objects.filter(soc_task_resultid=soc_task_resultid)
+    all_vulns = []
+    # 组装漏洞记录参数，返回给前端dataTable处理。
+    for k in vulns:
+        v = {
+            "ID": k.id,
+            "vulnscan_taskname": k.vulnscan_taskname,
+            "soc_task_resultid": k.soc_task_resultid,
+            "hostip": k.hostip,
+            "port": k.port,
+            "service": k.service,
+            "protocol": k.protocol,
+            "vuln_id": k.vuln_id,
+            "vuln_name": k.vuln_name,
+            "risk_level": k.risk_level,
+            "short_desc": k.short_desc,
+            "full_desc": k.full_desc,
+            "repair_advice": k.repair_advice,
+            "platforms": k.platforms,
+            "report_time": str(k.report_time),
+        }
+        all_vulns.append(v)
+    # print all_vulns
+    return render_json(all_vulns)
+
+
+# 获取漏扫结果报告饼图
+def get_vulnscan_report_chartdata(request):
+    soc_task_resultid = request.GET.get('soc_task_resultid')
+    print soc_task_resultid
+    sum = VulnScanReport.objects.filter(soc_task_resultid=soc_task_resultid).count()
+    info = VulnScanReport.objects.filter(soc_task_resultid=soc_task_resultid).filter(risk_level=u'信息').count()
+    warning = VulnScanReport.objects.filter(soc_task_resultid=soc_task_resultid).filter(risk_level=u'警告').count()
+    danger = VulnScanReport.objects.filter(soc_task_resultid=soc_task_resultid).filter(risk_level=u'危险').count()
+    emergence = VulnScanReport.objects.filter(soc_task_resultid=soc_task_resultid).filter(risk_level=u'紧急').count()
+
+    res = {
+        'code': 0,
+        'result': True,
+        'messge': 'success',
+        'data': {
+            "title": "漏洞报告",
+            "series": [
+                {'name': u'紧急', 'value': emergence, 'itemStyle': {'color': 'green'}, },
+                {'name': u'警告', 'value': warning, 'itemStyle': {'color': 'blue'}, },
+                {'name': u'危险', 'value': danger, 'itemStyle': {'color': 'yellow'}, },
+                {'name': u'信息', 'value': info, 'itemStyle': {'color': 'red'}, },
+            ]
+        }
+    }
+    return render_json(res)
+
+
+# 重启漏扫任务
+def restart_vulnscan_task(request):
+    resultid = request.GET.get('resultid')
+    task = VulnScanTasks.objects.filter(soc_task_resultid=resultid)
+    if task.exists():
+        report = task[0].has_report
+        try:
+            third_session_id = SOCconnect.get_third_session_id()
+            restart_task = SOCconnect.restart_task(third_session_id, resultid)
+            print "restart task success!"
+            SOCconnect.close_session(third_session_id)
+            if report:
+                # 删除旧的报告
+                VulnScanReport.objects.filter(soc_task_resultid=resultid).delete()
+                print "delete old report success!"
+            # 重置任务状态与进度
+            VulnScanTasks.objects.filter(soc_task_resultid=resultid).update(soc_task_status=u'等待',
+                                                                            soc_task_progress='0', has_report=False)
+            print "update task status success!"
+            result = {'result': True, 'message': u"重启漏扫任务成功！"}
+        except Exception, e:
+            result = {'result': False, 'message': u"重启漏扫任务失败！"}
+            print e
+    else:
+        result = {'result': False, 'message': u"任务ID不合法！"}
+    return render_json(result)
+
+
+# 停止漏扫任务
+def stop_vulnscan_task(request):
+    resultid = request.GET.get('resultid')
+    task = VulnScanTasks.objects.filter(soc_task_resultid=resultid)
+    if task.exists():
+        report = task[0].has_report
+        try:
+            third_session_id = SOCconnect.get_third_session_id()
+            stop_task = SOCconnect.stop_task(third_session_id, resultid)
+            print "stop task success!"
+            SOCconnect.close_session(third_session_id)
+            if report:
+                # 删除旧的报告
+                VulnScanReport.objects.filter(soc_task_resultid=resultid).delete()
+                print "delete old report success!"
+            # 重置任务状态与进度
+            VulnScanTasks.objects.filter(soc_task_resultid=resultid).update(soc_task_status=u'等待',
+                                                                            soc_task_progress='0', has_report=False)
+            print "stop task success!"
+            result = {'result': True, 'message': u"停止漏扫任务成功！"}
+        except Exception, e:
+            result = {'result': False, 'message': u"停止漏扫任务失败！"}
+            print e
+    else:
+        result = {'result': False, 'message': u"任务ID不合法！"}
+    return render_json(result)
+
+
+# 删除漏扫任务
+def delete_vulnscan_task(request):
+    resultid = request.GET.get('resultid')
+    task = VulnScanTasks.objects.filter(soc_task_resultid=resultid)
+    if task.exists():
+        report = task[0].has_report
+        try:
+            third_session_id = SOCconnect.get_third_session_id()
+            stop_task = SOCconnect.delete_task(third_session_id, resultid)
+            print "delete task success!"
+            SOCconnect.close_session(third_session_id)
+            if report:
+                # 删除旧的报告
+                VulnScanReport.objects.filter(soc_task_resultid=resultid).delete()
+                print "delete old report success!"
+            # 重置任务状态与进度
+            VulnScanTasks.objects.filter(soc_task_resultid=resultid).delete()
+            print "delete task success!"
+            result = {'result': True, 'message': u"删除漏扫任务成功！"}
+        except Exception, e:
+            result = {'result': False, 'message': u"删除漏扫任务失败！"}
+            print e
+    else:
+        result = {'result': False, 'message': u"任务ID不合法！"}
+    return render_json(result)
+
 
 def base_check(request):
 

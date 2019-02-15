@@ -7,34 +7,261 @@
 <div class="page-content">
     <div class="king-panel8 mb20">
         <div class="king-panel8-header p20" role="tab">
-                <div class="king-panel8-title king-info ">${ name }的漏洞扫描报告</div>
+                <div class="king-panel8-title king-info ">${ vulnscan_taskname }的漏洞扫描报告</div>
         </div>
         <div class="king-panel8-content p25">
                 <div class="container-fluid" style="position: relative;" id="body">
+                    <div id="chart" style="height:350px;padding:10px;"></div>
                         <div class="mb10 form-inline form-horizontal" style="min-width:100%">
                             <table class="table table-striped table-bordered" id="table">
                                 <thead>
                                 <tr>
-                                    <th class="backcolor_common" style="text-align: center;width: 10px;">ID</th>
-                                    <th class="backcolor_common" style="text-align: center;">任务名称</th>
-                                    <th class="backcolor_common" style="text-align: center;">扫描工具</th>
-                                    <th class="backcolor_common" style="text-align: center;">扫描目标</th>
-                                    <th class="backcolor_common" style="text-align: center;">创建者</th>
-                                    <th class="backcolor_common" style="text-align: center;">创建时间</th>
-                                    <th class="backcolor_common" style="text-align: center;width: 50px;">SOC任务ID</th>
-                                    <th class="backcolor_common" style="text-align: center;width: 50px">任务状态</th>
-                                    <th class="backcolor_common" style="text-align: center;">任务进度</th>
-                                    <th class="backcolor_common" style="text-align: center;width: 130px;">操作</th>
+
+
+                                    <th class="backcolor_common" style="text-align: center;width: 30px">主机IP</th>
+                                    <th class="backcolor_common" style="text-align: center;width: 40px">端口号</th>
+                                    <th class="backcolor_common" style="text-align: center;width: 60px">服务名称</th>
+
+                                    <th class="backcolor_common" style="text-align: center;width: 30px">漏洞ID</th>
+                                    <th class="backcolor_common" style="text-align: center;">漏洞名称</th>
+                                    <th class="backcolor_common" style="text-align: center;width: 60px">危险级别</th>
+                                    <th class="backcolor_common" style="text-align: center;">漏洞简要</th>
+
+                                    <th class="backcolor_common" style="text-align: center;width: 60px">报告时间</th>
+                                    <th class="backcolor_common" style="text-align: center;width: 30px">操作</th>
                                 </tr>
                                 </thead>
                             </table>
                         </div>
                 </div>
         </div>
-    </div>        
+    </div>
 </div>
 </%block>
 
 <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
 <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/datatables-1.10.7/jquery.dataTables.js" type="text/javascript"></script>
 <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/datatables-1.10.7/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+<script type="text/javascript">
+    var soc_task_resultid = "${soc_task_resultid}";
+
+    //table_js_start
+$(function () {
+    var language = {
+        search: '搜索：',
+        lengthMenu: "每页显示 _MENU_ 记录",
+        zeroRecords: "没找到相应的数据！",
+        info: "共_TOTAL_条记录, 当前第 _PAGE_/_PAGES_",
+        infoEmpty: "暂无数据！",
+        infoFiltered: "(从 _MAX_ 条数据中搜索)",
+        paginate: {
+            first: '首页',
+            last: '末页',
+            previous: '上一页',
+            next: '下一页',
+        }
+    }
+
+    $("#table").dataTable({
+        paging: true, //隐藏分页
+        autoWidth:false,
+        info: true, //隐藏左下角分页信息
+        searching: true, //搜索
+        lengthChange: true, //不允许用户改变表格每页显示的记录数
+        lengthMenu: [5, 10, 20], //每页显示选项
+
+        pagingType: 'full_numbers', //右下角翻页样式
+        pageLength: 10, //每页显示行数
+        //serverSide: true, //后端分页
+        //order: [[6, 'desc']],
+        //drawCallback: th_draw,
+        //columnDefs: [{"orderable": false, "targets": 4}, {"orderable": false, "targets": 8}],
+        ajax:{
+              url :'${SITE_URL}get_vulnscan_report/?soc_task_resultid='+soc_task_resultid,
+              dataSrc : 'message',
+              },
+        ordering: true, //排序
+        columns: [
+            //{data: 'ID'},
+            //{data: 'vulnscan_taskname'},
+            {data: 'hostip'},
+            {data: 'port'},
+            {data: 'service'},
+            //{data: 'protocol'},
+            {data: 'vuln_id'},
+            {data: 'vuln_name'},
+            {data: 'risk_level', render: function (data) {
+                var risk_level = '';
+                if (data == '信息') {
+                    risk_level = '<span class="label label-default">信息</span>';
+                } else if (data == '警告') {
+                    risk_level = '<span class="label label-primary">警告</span>';
+                } else if (data == '紧急') {
+                    risk_level = '<span class="label label-danger">紧急</span>';
+                } else if (data == '危险') {
+                    risk_level = '<span class="label label-warning">危险</span>';
+                }
+                return '<div align="center">' + risk_level + '</div>';
+            }
+            },
+            {data: 'short_desc'},
+            //{data: 'full_desc'},
+            //{data: 'repair_advice'},
+            {data: 'report_time'},
+            {data:null,
+                orderable:false,
+                render : function(data, type, row, meta){
+                    return '<a class="btn btn-xs btn-success detail">详情</a>';
+            }
+            },
+
+        ],
+        language: language, //汉化
+
+    });
+    var t = $("#table").DataTable();//获取datatables对象
+    //停止按钮绑定事件
+    $("#table tbody").on('click', 'a.detail', function(){
+        var row = t.row( $(this).parents('tr') ),//获取按钮所在的行
+        data = row.data();
+        //alert(data);
+        var d = dialog({
+        width: 800,
+        title: '漏洞详情',
+        content: '<div style="width:100%;overflow-y: auto">\
+     <div style="width:100%;overflow-y: auto">\
+        <div style="width:100%;overflow-y: auto">\
+            <table class="table table-striped table-bordered" >\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >主机IP：</td>\
+            <td>'+data['hostip']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >漏洞ID：</td>\
+            <td>'+data['vuln_id']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >漏洞名称 ：</td>\
+            <td>'+data['vuln_name']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >漏洞级别：</td>\
+            <td>'+data['risk_level']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >端口号：</td>\
+            <td>'+data['port']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >服务名称：</td>\
+            <td>'+data['service']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >协议：</td>\
+            <td>'+data['protocol']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >简要描述：</td>\
+            <td>'+data['short_desc']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px" >详细描述：</td>\
+            <td>'+data['full_desc']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px">修复建议：</td>\
+            <td>'+data['repair_advice']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px">影响平台：</td>\
+            <td>'+data['platforms']+'</td></tr>\
+            <tr><td class="backcolor_common" style="text-align: center;width: 100px">报告时间：</td>\
+            <td>'+data['report_time']+'</td></tr>\
+            </table>\
+        </div>\
+    </div>\
+    </div>',
+        okValue: '确定',
+        ok: function () {
+            // do something
+        }
+    });
+    d.showModal();
+
+    });
+
+});
+    //table_js_end
+
+
+</script>
+<script type="text/javascript">
+    //chart_js_start
+function createEPieChart(conf){
+    var myChart = echarts.init(document.getElementById(conf.selector));
+    var aLegend = [];
+    //var icolor= []
+    var series = conf.data.series;
+    for (var i = 0; i < series.length; i++) {
+         aLegend[i] = series[i].name;
+         //tcolor[i] =series[i].textStyle;
+    };
+    // 填入数据
+    myChart.setOption({
+        title : {
+            text: conf.data.title,
+            subtext: '',
+            x:'center'
+        },
+        legend: {
+            // x : 'left',
+            y: 'bottom',
+
+            data: aLegend
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel'],
+                    option: {
+                        funnel: {
+                            x: '25%',
+                            width: '50%',
+                            funnelAlign: 'left',
+                            max: 1548
+                        }
+                    }
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series: [{
+            // 根据名字对应到相应的系列
+            name:'漏洞级别',
+            type:'pie',
+            radius:'55%',
+            data: series,
+            //itemStyle:series,
+        }
+        ]
+    });
+}
+
+function initEPieChart(conf){
+    $.ajax({
+        url: conf.url,
+        type: 'GET',
+        dataType: conf.dataType,
+        success: function(res){
+            //获取数据成功
+            if (res.result){
+                var data = res.data;
+                createEPieChart({
+                    selector: conf.containerId, // 图表容器
+                    data: data, // 图表数据
+                });
+            }
+        }
+    });
+}
+
+var soc_task_resultid = "${soc_task_resultid}";
+$(function(){
+    initEPieChart({
+        url: '${SITE_URL}get_vulnscan_report_chartdata/?soc_task_resultid='+soc_task_resultid,
+        dataType: 'json',
+        containerId: 'chart'
+    });
+});
+    //chart_js_end
+</script>
