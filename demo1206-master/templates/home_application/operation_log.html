@@ -1,0 +1,43 @@
+<%inherit file="/base.html"/>
+<%block name='head'>
+${parent.head()}
+</%block>
+<%block name="content">
+<div style="width:100%;padding-right:5px;padding-top:10px;overflow-y: hidden">
+    <div class="fieldset mb10 pb15">
+        <div class="legend">查询条件</div>
+        <div class="container-fluid"  style="overflow-y: auto;padding-bottom: 10px">
+            <div class="form-inline king-search-form king-no-bg  pull-left" >
+                <div class="form-group" >
+                    <label>操作者：</label>
+                    <input id="operator_s" type="text" style="width:160px;" class="form-control"
+                           placeholder="请输入操作者"/>
+                    <label>开始时间：</label>
+                    <input type="text" style="width: 120px;" class="form-control" id="time_start_s"
+                           placeholder="选择日期..."/>
+                    <label>结束时间：</label>
+                    <input type="text" style="width: 120px;margin-right: 20px;" class="form-control" id="time_end_s"
+                           placeholder="选择日期...">
+                </div>
+            </div>
+            <!--div class="box-body" id="tableexport_demo" style="float: right">
+                <div class="btn-group">
+                    <a class="king-btn-demo king-btn king-success" onclick="exportExcel()">导出Excel </a>
+                </div>
+                <div class="fb-comments" data-numposts="5" data-colorscheme="light"></div>
+            </div-->
+            <div style="float: right">
+                <button type="button" onclick="get_log_list()" class="king-btn-demo king-btn king-primary">
+                    <i class="fa fa-search btn-icon"></i>搜索
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="log_list" class="demo" style="margin-top: 5px;overflow-y: auto;overflow-x: hidden"></div>
+
+
+</div>
+</%block>
+<script type="text/javascript" src="${STATIC_URL}js/sys_management/operation_log.js"></script>
+

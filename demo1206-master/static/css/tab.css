@@ -1,0 +1,111 @@
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+	background-color:#5c90d2;
+}
+.backcolor_common thead th,.backcolor_common {background-color:#5c90d2;
+ 	color:#ffffff;
+}
+
+.k-combobox.business_name {
+    width: 220px;
+}
+
+.container-fluid {
+    max-width: 1160px;
+}
+.select2-container .select2-selection--single{
+    min-height: 30px;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field{
+    min-height: 30px;
+}
+.select2-container .select2-selection--multiple{
+    min-height: 30px;
+}
+.select2-container--default .select2-selection--multiple{
+        border: 1px solid #aaa;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    border: 1px solid;
+    border-color: #aaa;
+}
+.file_btn{
+    position: relative;
+    left: 70%;
+    bottom: 22px;
+    border-radius: 0px;
+    height: 20px;
+  }
+.modal_input{
+    width:320px;
+    height:30px;
+    border: 1px solid #aaa;
+  }
+  .ronly{
+  	background-color: #dedede;
+}
+.form-horizontal .controls {
+    margin-left: 160px;
+    min-height: 28px;
+    line-height: 17px;
+}
+.select2-dropdown,.select2-container--default .select2-selection--multiple {
+	border-radius: 0px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+    border-radius: 0px;
+    max-height: 20px;
+    font-size: 10px
+}
+.alert{
+	background-color:#FCF8E3; border-color #FBEED5;
+}
+.file-caption{
+    height: 34.6px
+}
+.form-control{
+    font: 14px/1.5 Tahoma,Helvetica,Arial,'微软雅黑',sans-serif;
+}
+.king-btn-small{
+    min-height:26px;
+    max-height: 26px;
+}
+.business_name{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #aaa;
+    }
+.pagination>li>a{
+    position:inherit;
+}
+.king-horizontal-nav2 .navbar-nav li a:hover, .king-horizontal-nav2 .navbar-nav li a:active {
+  background: #5c90d2;  
+}
+.king-horizontal-nav2 .navbar-nav li.king-navbar-active a{
+      background: #5c90d2;  
+}
+.modal-content{
+    min-width:600px;
+}
+.select2-container--default .select2-selection--single{
+    border-radius: 0px;
+    min-height: 30px;
+}
+.popover-title{
+    font: 14px/1.5 Tahoma,Helvetica,Arial,'微软雅黑',sans-serif;
+}
+.input-group .form-control{
+    z-index:0;
+}
+table.dataTable thead > tr > th {
+    padding-right: 8px;
+}
+.label_center {
+    margin-left: 120px;
+}
+.file-input{
+    width:530px;
+}
